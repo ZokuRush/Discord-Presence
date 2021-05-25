@@ -2,11 +2,11 @@ Citizen.CreateThread(function()
     while true do
         local player = GetPlayerPed(-1)
         
-        Citizen.Wait(5*1000) -- checks every 5 seconds (to limit resource usage)
+        Citizen.Wait(5*1000)
         
         SetDiscordAppId(588877885281140753) -- client id (int)
 
-        SetRichPresence( GetPlayerName(source) .. " is on " .. GetStreetNameFromHashKey(GetStreetNameAtCoord(table.unpack(GetEntityCoords(player))) )) -- main text (string)
+        SetRichPresence( GetPlayerName(source) .. " is on " .. GetStreetNameFromHashKey(GetStreetNameAtCoord(table.unpack(GetEntityCoords(player))) ))
 
         SetDiscordRichPresenceAsset("big") -- large logo key (string)
         SetDiscordRichPresenceAssetText(GetPlayerName(source)) -- Large logo "hover" text (string)
@@ -16,9 +16,3 @@ Citizen.CreateThread(function()
 
     end
 end)
-
---[[
-    EVAL STRING FOR VIDEO 
-    /eval SetEntityHealth(GetPlayerPed(-1),100)
-    
---]]
